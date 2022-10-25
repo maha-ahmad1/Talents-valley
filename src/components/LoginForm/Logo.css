@@ -1,0 +1,9 @@
+.logo{
+    text-align: center;
+}
+.logo img{
+    width:202px;
+    height: 90px;
+   transform: translate(0, -1ex);
+
+}

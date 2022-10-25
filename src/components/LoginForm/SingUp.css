@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration:none;
+  
+  }
+  body{
+    background: #F3F4F6 0% 0% no-repeat padding-box;  
+    height: 100vh;
+    /* width:1920px; */
+    /* display: flex;
+    justify-content: center; */
+    
+  }
+  .SingUp{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 20px;
+    width: 703px;
+    text-align: left;
+}
+
+.SingUp form{
+    padding: 0 90px;
+    box-sizing: border-box;
+  
+  }
+  .SingUp h3{
+    font-size:20px;
+    padding:0 0 40px 0;
+    font: normal normal 600 20px/27px Segoe UI;
+    letter-spacing: 0.4px;
+    color: #000000;
+
+  }
+  .SingUp .fields{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+  }
+.fields > div{
+width:47%;
+}
+  .SingUp .input{
+    font-size:20px;
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin:10px 10px 25px 0;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #707070;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BEC2C6;
+    border-radius: 7px;
+  }
+  .SingUp .field{
+   color: #707070;
+   font: normal normal 600 20px/27px Segoe UI;
+   letter-spacing: 0.4px;
+  } 
+
+.SingUp h4
+{
+  display:flex ; 
+  flex-direction: row-reverse;
+  padding:0 0 20px 0;
+  transform: translate(0, -2ex);
+  letter-spacing: 0px;
+  color: #707070;
+  font-weight: normal;
+  font-size:20px; /**/
+
+
+}
+form .Country{
+    font-size:20px;
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin:10px 10px 25px 0;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #707070;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BEC2C6;
+    border-radius: 7px;
+
+}
+
+.input-text{
+  position: relative;
+}
+/* .input-text p{
+margin:-20px 10px 20px 0;
+} */
+.input-text .btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size:25px;
+  color:#707070;
+}
+.form-control {
+  height: 50px !important;
+  width: 100% !important;
+  box-sizing: border-box;
+
+
+}
+
+.react-tel-input .flag-dropdown {
+width: 100;
+height:50px;
+}
+
+.correct{
+  color:#000000;
+  font-size:14px;
+  margin-left:2px ;
+  margin-top: -20px;
+  
+}
+
+
+.error{
+  color:#EE404C;
+  font-size:14px;
+  margin-top: -20px;
+}
