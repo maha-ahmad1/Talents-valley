@@ -5,13 +5,13 @@ return(
       <div className="left">
         <ul>
           <li>
-            <a>Talents Valley</a>
+            <p>Talents Valley</p>
           </li>
           <li>
-            <a>Contacts</a>
+            <p>Contacts</p>
           </li>
           <li>
-            <a>Privacy & Terms</a>
+            <p>Privacy & Terms</p>
           </li>
         </ul>
         </div>

@@ -7,7 +7,6 @@ import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import correct from "../../assets/images/correct.png";
 import { AiFillWarning } from "react-icons/ai";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
