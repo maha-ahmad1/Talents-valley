@@ -3,18 +3,18 @@ import Button from "./Button";
 import Text from "./Text";
 import Navbar from "./Navbar";
 import React, { useState } from "react";
-// import Country from "./Country";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { AiFillWarning } from "react-icons/ai";
+import {
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  AiFillWarning,
+} from "react-icons/ai";
 import { BsFillCheckCircleFill } from "react-icons/bs";
-
-// import Select from 'react-select'
-// import countryList from 'react-select-country-list'
+import { getCountries } from "react-phone-number-input/input";
+import en from "react-phone-number-input/locale/en.json";
+import axios from "axios";
 import "./SingUp.css";
-
-// import { Link } from "react-router-dom";
 
 function SingUp() {
   const [form, setForm] = useState({
@@ -22,17 +22,44 @@ function SingUp() {
     country: "",
     firstName: "",
     lastName: "",
-    phoneNumber: "",
+    password: "",
   });
-  const [password, setPassword] = useState("");
+  const [mobile, setmobile] = useState("");
   const [error, setError] = useState("");
   const [passwordType, setPasswordType] = useState("password");
+  const [errMsg, setErrMsg] = useState("");
 
-  console.log(form);
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-  };
+    try {
+      const response = await axios.post(
+        "https://talents-valley.herokuapp.com/api/user/signup",
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
 
+          password: form.password,
+          email: form.email,
+          country: form.country,
+          firstName: form.firstName,
+          lastName: form.lastName,
+          mobile: "+" + mobile,
+        }
+      );
+
+      console.log(JSON.stringify(response?.data));
+    } catch (err) {
+      console.log("erro", err);
+
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status >= 400 && err.response?.status < 500) {
+        setErrMsg(err.response.data.message);
+      } else {
+        setErrMsg("Registration Failed");
+      }
+    }
+  };
   const togglePassword = () => {
     if (passwordType === "password") {
       setPasswordType("text");
@@ -43,10 +70,10 @@ function SingUp() {
   const validate = () => {
     const regex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
-    if (regex.test(password)) {
+    if (regex.test(form.password)) {
       setError(
-        <p className="correct">
-          <BsFillCheckCircleFill />
+        <p className="correct" style={{ color: "#2fc505" }}>
+          <BsFillCheckCircleFill style={{ color: "#2fc505" }} />
           Nice work. This is an excellent password
         </p>
       );
@@ -70,20 +97,20 @@ function SingUp() {
           <div>
             <label className="field">First Name</label>
             <input
-              className="input"
+              className="inputs"
               type="text"
               placeholder="Enter first name "
-              onChange={(e) => setForm(e.target.value)}
+              onChange={(e) => setForm({ ...form, firstName: e.target.value })}
               value={form.firstName}
             />
           </div>
           <div>
             <label className="field">Last Name</label>
             <input
-              className="input"
+              className="inputs"
               type="text"
               placeholder="Enter first name "
-              onChange={(e) => setForm(e.target.value)}
+              onChange={(e) => setForm({ ...form, lastName: e.target.value })}
               value={form.lastName}
             />
           </div>
@@ -95,7 +122,7 @@ function SingUp() {
           type="text"
           name="email"
           placeholder="email@gmail.com"
-          onChange={(e) => setForm(e.target.value)}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
           value={form.email}
         />
 
@@ -106,10 +133,10 @@ function SingUp() {
             type={passwordType}
             name="password"
             onChange={(e) => {
-              setPassword(e.target.value);
+              setForm({ ...form, password: e.target.value });
               validate();
             }}
-            value={password}
+            value={form.password}
           />
           <span className="btn" onClick={togglePassword}>
             {passwordType === "password" ? (
@@ -119,20 +146,20 @@ function SingUp() {
             )}
           </span>
         </div>
-        <p>{error}</p>
+        {error}
 
         <label className="field" htmlFor="number">
           Phone Number
         </label>
         <PhoneInput
-          onChange={setForm}
-          value={form.phoneNumber}
+          onChange={setmobile}
+          value={mobile}
           containerStyle={{ margin: "10px 10px 25px 0" }}
           dropdownStyle={{ height: "100px", width: "500px" }}
           country={"ps"}
           inputStyle={{
             backgroundColor: "#ffff",
-            fontSize: "20px",
+            fontSize: "16px",
             color: "#707070",
             background: " #FFFFFF 0% 0% no-repeat padding-box",
             borderRadius: 7,
@@ -146,19 +173,29 @@ function SingUp() {
             paddingLeft: 10,
             borderTopLeftRadius: 7,
             borderBottomLeftRadius: 7,
+            height: 60,
           }}
         />
+
         <label className="field">Country</label>
         <select
-          className="Country"
-          onChange={(e) => setForm(e.target.value)}
+          className="input"
           value={form.country}
+          onChange={(e) =>
+            setForm({ ...form, country: e.target.value || undefined })
+          }
         >
-          <option value="english">English(USA)</option>
-          <option value="arabic">Arabic</option>
+          <option value="" className="option">
+            {en[""]}
+          </option>
+          {getCountries().map((country) => (
+            <option key={en[country]} value={en[country]}>
+              {en[country]}
+            </option>
+          ))}
         </select>
-        {/* <Country /> */}
         <Button text="Sign Up " />
+        <p style={{ color: "#EE404C", fontSize: "18px" }}>{errMsg}</p>
         <Text Sentence="Already have an account?" text="Sign In" />
       </form>
       <Navbar />
