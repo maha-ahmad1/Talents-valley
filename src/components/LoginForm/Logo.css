@@ -1,9 +1,14 @@
 .logo{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 64px; */
+    /* width: 100%; */
+    margin-top: -30px;
+
+
 }
-.logo img{
+ .img{
+
     width:202px;
-    height: 90px;
-   transform: translate(0, -1ex);
 
 }

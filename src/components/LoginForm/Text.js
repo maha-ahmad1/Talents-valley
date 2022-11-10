@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import './Text.css';
-export default function Text({text,Sentence}) {
+export default function Text({text,Sentence,link,className}) {
   return (
     <>
-      <nav>
+      <div className='text'>
       {Sentence}{" "}
-        <Link className="link" to="/SignUp">
+        <Link className={className} to={link}>
           {text}
         </Link>
-      </nav>
+      </div>
     </>
   );
 }

@@ -5,6 +5,7 @@ import Text from "./Text";
 import Navbar from "./Navbar";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import axios from "axios";
+
 import "./Form.css";
 export default function Form() {
   const [password, setPassword] = useState("");
@@ -63,7 +64,6 @@ export default function Form() {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
-        {/* <Test/> */}
         <label className="field">Password</label>
         <div className="input-text">
           <input
@@ -80,12 +80,18 @@ export default function Form() {
             )}
           </span>
         </div>
-        <h4>Forgot Password?</h4>
 
-        <Button text="Sign In" />
+        <Text className="forgot" text="Forgot Password?" link="/Forgot" />
+
+        <Button text="Sign In" link="/" />
         <p style={{ color: "#EE404C", fontSize: "18px" }}>{errMsg}</p>
 
-        <Text Sentence="Don't have an account?" text="Sign up" />
+        <Text
+          className="link"
+          Sentence="Don't have an account?"
+          text="Sign up"
+          link="/SignUp"
+        />
       </form>
       <Navbar />
       {/* </Link> */}

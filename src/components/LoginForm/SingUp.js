@@ -194,9 +194,15 @@ function SingUp() {
             </option>
           ))}
         </select>
-        <Button text="Sign Up " />
+        <Button text="Sign Up" link="" />
+
         <p style={{ color: "#EE404C", fontSize: "18px" }}>{errMsg}</p>
-        <Text Sentence="Already have an account?" text="Sign In" />
+        <Text
+          className="link"
+          Sentence="Already have an account?"
+          text="Sign In"
+          link="/"
+        />
       </form>
       <Navbar />
 

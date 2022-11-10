@@ -1,7 +1,7 @@
-nav{
-    font-size:18px; /**/
+.text{
+    font-size:18px; 
     text-align:center;
-    padding:30px 0 0 0;
+    padding:0 0 60px 0;
     color:#000000;
     font-weight: normal;
     
@@ -11,3 +11,11 @@ nav{
       text-decoration:none;
     
     }
+.forgot{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 5px;
+  color: #707070;
+
+}

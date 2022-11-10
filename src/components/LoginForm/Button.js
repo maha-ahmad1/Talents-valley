@@ -1,10 +1,14 @@
 import "./Button.css";
-export default function Button({ text }) {
+import { Link } from "react-router-dom";
+
+export default function Button({ text='', link, type ='submit' }) {
   return (
     <>
-      <button className="button" type="submit">
+      {/* <Link  to={link}> */}
+      <button className="button" type={type} >
         {text}
       </button>
+      {/* </Link> */}
     </>
   );
 }
