@@ -4,14 +4,23 @@ import { Arrow } from "./Card/CardStyle";
 import Button from "./Button";
 import InputField from "./Input";
 import { useState } from "react";
-import { Label, Paragraph, Paragraph2 } from "./Card/CardStyle";
-import { Link } from "react-router-dom";
+import { createSearchParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import { Label, Paragraph, Paragraph2 } from "./Card/CardStyle";
 
 export default function Forgot() {
   const [inputValue, setInputValue] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
+  const navigate = useNavigate();
+  // const openprofile = (id) => {
+  //   navigate({
+  //     pathname: "/SendCode",
+  //     search: createSearchParams({
+  //       id: "635c1e38699f18f7f97b89e0",
+  //     }).toString(),
+  //   });
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -59,7 +68,7 @@ export default function Forgot() {
           value={inputValue}
           name="email"
         />
-        <Button text="Send Code" type="submit" />
+        <Button text="Send Code" onClick={()=>navigate('/SendCode')} />
         <p style={{ color: "#EE404C", fontSize: "18px" }}>{errMsg}</p>
       </form>
     </Card>
