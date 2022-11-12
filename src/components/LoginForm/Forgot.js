@@ -4,7 +4,7 @@ import { Arrow } from "./Card/CardStyle";
 import Button from "./Button";
 import InputField from "./Input";
 import { useState } from "react";
-import { createSearchParams, useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { Label, Paragraph, Paragraph2 } from "./Card/CardStyle";
 
