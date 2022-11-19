@@ -5,11 +5,6 @@ import React, { useState } from "react";
 const Password = ({ value, placeholder, onChange, className, name }) => {
   const [passwordType, setPasswordType] = useState("password");
 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    onChange(value);
-  };
-
   const togglePassword = () => {
     if (passwordType === "password") {
       setPasswordType("text");
@@ -26,17 +21,16 @@ const Password = ({ value, placeholder, onChange, className, name }) => {
           value={value}
           placeholder={placeholder}
           name={name}
-          onChange={handleChange}
+          onChange={(e) => onChange(e.target.value)}
         />
-      <Eye onClick={togglePassword}>
-        {passwordType === "password" ? (
-          <AiOutlineEyeInvisible />
-        ) : (
-          <AiOutlineEye />
-        )}
-      </Eye>
+        <Eye onClick={togglePassword}>
+          {passwordType === "password" ? (
+            <AiOutlineEyeInvisible />
+          ) : (
+            <AiOutlineEye />
+          )}
+        </Eye>
       </InputPassword>
-
     </>
   );
 };

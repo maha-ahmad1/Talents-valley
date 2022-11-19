@@ -5,6 +5,7 @@ import Forgot from "./components/LoginForm/Forgot";
 import SendCode from "./components/LoginForm/SendCode";
 import NewPassword from "./components/LoginForm/NewPassword";
 import Reset from "./components/LoginForm/Reset";
+import Verification from "./components/LoginForm/Verification";
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/SendCode" element={<SendCode />} />
         <Route path="/NewPassword" element={<NewPassword />} />
         <Route path="/Reset" element={<Reset />} />
+        <Route path="/Verification" element={<Verification />} />
       </Routes>
     </div>
   );

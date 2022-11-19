@@ -13,14 +13,6 @@ export default function Forgot() {
   const [errMsg, setErrMsg] = useState("");
 
   const navigate = useNavigate();
-  // const openprofile = (id) => {
-  //   navigate({
-  //     pathname: "/SendCode",
-  //     search: createSearchParams({
-  //       id: "635c1e38699f18f7f97b89e0",
-  //     }).toString(),
-  //   });
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -34,9 +26,11 @@ export default function Forgot() {
         }
       );
 
+      navigate("/SendCode", { state: { id: response?.data.data._id } });
+
       console.log(JSON.stringify(response?.data));
     } catch (err) {
-      console.log("erro", err);
+      console.log("error", err);
 
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -62,13 +56,13 @@ export default function Forgot() {
       <Label>Email</Label>
       <form onSubmit={handleSubmit}>
         <InputField
-          type="text"
+          type="email"
           placeholder="email@gmail.com"
           onChange={setInputValue}
           value={inputValue}
           name="email"
         />
-        <Button text="Send Code" onClick={()=>navigate('/SendCode')} />
+        <Button text="Send Code" />
         <p style={{ color: "#EE404C", fontSize: "18px" }}>{errMsg}</p>
       </form>
     </Card>

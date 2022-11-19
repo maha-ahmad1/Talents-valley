@@ -1,21 +1,16 @@
-import { Resend, SendInput } from "./Card/CardStyle";
+// import { Resend, SendInput } from "./Card/CardStyle";
 
-const Check = ({ value, placeholder, type, onChange }) => {
-  const handleChange = (e) => {
-    const { value } = e.target;
-    onChange(value);
-  };
+// const Check = ({ placeholder, type, value, onChange }) => {
+//   return (
+//     <SendInput>
+//       <Resend
+//         type={type}
+//         placeholder={placeholder}
+//         value={value}
+//         onChange={(e)=>onChange(e.target.value)}
+//       />
+//     </SendInput>
+//   );
+// };
 
-  return (
-    <SendInput>
-      <Resend
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        onChange={handleChange}
-      />
-    </SendInput>
-  );
-};
-
-export default Check;
+// export default Check;

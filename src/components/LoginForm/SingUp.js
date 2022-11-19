@@ -176,7 +176,6 @@ function SingUp() {
             height: 60,
           }}
         />
-
         <label className="field">Country</label>
         <select
           className="input"
