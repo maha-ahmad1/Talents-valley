@@ -2,6 +2,8 @@ import Card from "./Card/Card";
 import Logo from "./Logo";
 import { Check, Div, Heading, ParagraphR } from "./Card/CardStyle";
 import Button from "./Button";
+import { Link } from "react-router-dom";
+
 import check from "../../assets/images/check.png";
 
 export default function Reset() {
@@ -18,7 +20,9 @@ export default function Reset() {
         <ParagraphR> Your Password has been Successfully Reset.</ParagraphR>
       </Div>
       <ParagraphR>Click Below To Login</ParagraphR>
-      <Button text="Sign In " link="/" />
+      <Link to='/'>
+      <Button text="Sign In " />
+      </Link>
     </Card>
   );
 }

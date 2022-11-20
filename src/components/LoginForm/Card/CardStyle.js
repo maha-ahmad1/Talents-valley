@@ -62,7 +62,6 @@ export const Input = styled.input`
   height: 60px;
   margin-top: 10px;
   margin-bottom: 30px;
-
 `;
 
 export const InputField1 = styled.div`
@@ -107,7 +106,6 @@ export const SendInput = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-
 `;
 export const SendInput1 = styled.div`
   display: flex;
@@ -121,15 +119,14 @@ export const SendInput2 = styled.div`
 export const InputPassword = styled.div`
   width: 100%;
   position: relative;
-
 `;
 
 export const Eye = styled.span`
-position: absolute;
-right: 20px;
-top: 25px;
-font-size:25px;
-color:#00000029;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  font-size: 25px;
+  color: #00000029;
 `;
 
 export const Check = styled.img`
@@ -159,4 +156,30 @@ export const Pcreate = styled.p`
   font-size: 25px;
   font-weight: 600;
   margin: 50px 0 30px 0;
+`;
+
+export const Title = styled.h1`
+  font: normal normal 600 30px/40px Segoe UI;
+  letter-spacing: 0px;
+  color: #151617;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Verificationh1 = styled.h1`
+  font: normal normal 600 18px/27px Segoe UI;
+  width: 100%;
+  color: #151617;
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
+
+export const Verificationdiv = styled.div`
+  display: flex;
+  justfiy-content: center;
+  width: 100%;
+  height: 88px;
+  background: #f3f4f6 0% 0% no-repeat padding-box;
+  border: 1px solid #e2e2e2;
+  border-radius: 7px;
 `;

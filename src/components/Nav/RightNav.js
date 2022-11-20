@@ -8,24 +8,34 @@ const Ul = styled.ul`
   padding: 0 18px 0 0;
 
   li {
-    padding: 18px 10px;
+    padding: 19px 20px;
   }
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0d2538;
+    background-color: #a7bdfb;
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
     right: 0;
     height: 100vh;
-    width: 300px;
+    width: 200px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
 
     li {
       color: #fff;
     }
+  }
+  .createstyle {
+    color: #4375ff;
+    width: 107px;
+    height: 34px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #4375ff;
+    border-radius: 23px;
+    padding: 2px 17px;
+    margin-top: 15px;
   }
 `;
 
@@ -34,7 +44,7 @@ const RightNav = ({ open }) => {
     <Ul open={open}>
       <li>Home</li>
       <li>Invoice</li>
-      <li>Create</li>
+      <li className="createstyle">Create</li>
     </Ul>
   );
 };

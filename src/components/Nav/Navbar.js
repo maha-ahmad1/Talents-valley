@@ -5,8 +5,8 @@ import logohome from "../../assets/images/logohome.png";
 
 const Nav = styled.nav`
   width: 100%;
-  height: 55px;
-  border-bottom: 2px solid #f1f1f1;
+  height: 72px;
+  border-bottom: 2px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -19,11 +19,10 @@ const Nav = styled.nav`
     display: flex;
   }
   .logo1 {
-    //width: 96px;
     height: 72px;
   }
   .text {
-    padding: 18px 0;
+    padding: 19px 0;
     font: normal normal 600 20px/27px Segoe UI;
     color: #000000;
   }

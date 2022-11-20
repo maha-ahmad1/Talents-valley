@@ -21,7 +21,7 @@ const Password = ({ value, placeholder, onChange, className, name }) => {
           value={value}
           placeholder={placeholder}
           name={name}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={ onChange}
         />
         <Eye onClick={togglePassword}>
           {passwordType === "password" ? (

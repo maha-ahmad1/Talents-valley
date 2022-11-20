@@ -12,6 +12,7 @@ export default function Forgot() {
   const [password, setPassword] = useState("");
   const [passwordVerify, setPasswordVerify] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [errVerify, setErrVerify] = useState("");
 
   const navigate = useNavigate();
 
@@ -32,18 +33,25 @@ export default function Forgot() {
           recoverToken: recovertoken,
         }
       );
-
+      if (response?.status < 400 && password.match(passwordVerify)) {
+        navigate("/Reset");
+        console.log("password" + password);
+        console.log("passwordVerify" + passwordVerify);
+      }
       console.log(response?.data);
-      navigate("/Reset");
     } catch (err) {
       console.log("erro", err);
       if (!err?.response) {
         setErrMsg("No Server Response");
-      } else if (err.response?.status >= 400 && err.response?.status < 500) {
+      }
+      if (err.response?.status >= 400 && err.response?.status < 500) {
         setErrMsg(err.response.data.message);
       } else {
         setErrMsg(" Failed");
       }
+    }
+    if (password !== passwordVerify) {
+      setErrVerify("confirm password should be match with password");
     }
   };
 
@@ -54,12 +62,12 @@ export default function Forgot() {
           <Arrow />
         </Link>
       </Logo>
-      <Pcreate>Create New Password</Pcreate>
       <form onSubmit={handleChange}>
+        <Pcreate>Create New Password</Pcreate>
         <Label>New Password</Label>
         <Password
           type={"password"}
-          onChange={setPassword}
+          onChange={(e) => setPassword(e.target.value)}
           value={password}
           name={"password"}
         />
@@ -67,13 +75,14 @@ export default function Forgot() {
         <Label>Re-Enter Password</Label>
         <Password
           type={"password"}
-          onChange={setPasswordVerify}
+          onChange={(e) => setPasswordVerify(e.target.value)}
           value={passwordVerify}
           name={"repassword"}
         />
         {console.log(passwordVerify)}
+        <p style={{ color: "#EE404C", fontSize: "18px" }}>{errVerify}</p>
 
-        <Button text="Continue" link="/Reset" />
+        <Button text="Continue" />
         <p style={{ color: "#EE404C", fontSize: "18px" }}>{errMsg}</p>
       </form>
     </Card>

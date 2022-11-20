@@ -70,6 +70,7 @@ function SingUp() {
   const validate = () => {
     const regex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+
     if (regex.test(form.password)) {
       setError(
         <p className="correct" style={{ color: "#2fc505" }}>

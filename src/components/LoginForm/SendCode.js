@@ -57,8 +57,10 @@ export default function SendCode() {
       );
 
       console.log(response?.data);
-      navigate("/NewPassword", {state: { name: response?.data.data.recoverToken}});
-      console.log(response?.data.data.recoverToken)
+      navigate("/NewPassword", {
+        state: { name: response?.data.data.recoverToken },
+      });
+      console.log(response?.data.data.recoverToken);
     } catch (err) {
       console.log("erro", err);
       if (!err?.response) {
@@ -144,7 +146,7 @@ export default function SendCode() {
             />
           </SendInput2>
         </SendInput>
-        <Button text="Continue" link="/NewPassword" />
+        <Button text="Continue"  />
         <Text
           className="link"
           Sentence="Didn't get the code?"
