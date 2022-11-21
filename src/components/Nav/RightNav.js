@@ -9,6 +9,8 @@ const Ul = styled.ul`
 
   li {
     padding: 19px 20px;
+    font: normal normal 600 18px/27px Segoe UI;
+    color: #151617;
   }
 
   @media (max-width: 768px) {
@@ -34,8 +36,11 @@ const Ul = styled.ul`
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #4375ff;
     border-radius: 23px;
-    padding: 2px 17px;
+    padding: 3px 23px;
     margin-top: 15px;
+    font: normal normal 600 18px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #4375ff;
   }
 `;
 

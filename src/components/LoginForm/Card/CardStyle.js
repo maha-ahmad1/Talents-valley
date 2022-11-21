@@ -167,7 +167,7 @@ export const Title = styled.h1`
 `;
 
 export const Verificationh1 = styled.h1`
-  font: normal normal 600 18px/27px Segoe UI;
+  font: normal normal 600 18.5px/27px Segoe UI;
   width: 100%;
   color: #151617;
   padding-top: 20px;
@@ -176,10 +176,70 @@ export const Verificationh1 = styled.h1`
 
 export const Verificationdiv = styled.div`
   display: flex;
-  justfiy-content: center;
   width: 100%;
   height: 88px;
   background: #f3f4f6 0% 0% no-repeat padding-box;
   border: 1px solid #e2e2e2;
   border-radius: 7px;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 15px;
+`;
+export const Verifydiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+`;
+export const Verifyh1 = styled.h1`
+  font: normal normal normal 18px/24px Segoe UI;
+  color: #151617;
+`;
+
+export const Verifyhp = styled.p`
+  font: normal normal normal 14px/19px Segoe UI;
+`;
+
+export const Buttonstyle = styled.button`
+  width: 100%;
+  //width:${(props) => (props.large ? "500px" : "200px")}
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #4375ff;
+  //  background:${(props) =>
+    props.variant === "outline" ? "#4375ff" : "#ffff"}
+  color: #fff;
+  font-weight: 500;
+  font-size: 25px;
+  border-radius: 7px;
+  height: 60px;
+  margin-top: 75px;
+  margin-bottom: 60px;
+  cursor: pointer;
+`;
+export const Buttondiv = styled.div`
+  display: flex;
+  // padding-left: 100px;
+`;
+
+export const Button = styled.button`
+  background: #4375ff 0% 0% no-repeat padding-box;
+  border: 1px solid #e2e2e2;
+  border-radius: 7px;
+  width: 114px;
+  height: 31px;
+  font: normal normal normal 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  cursor: pointer;
+`;
+export const Span = styled.span`
+  color: #e80707;
+`;
+
+export const Divp = styled.div`
+  margin-bottom: 15px;
+  font: normal normal normal 14px/19px Segoe UI;
+  color: #151617;
 `;

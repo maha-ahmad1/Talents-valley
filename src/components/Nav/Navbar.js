@@ -13,8 +13,8 @@ const Nav = styled.nav`
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 0.5px 6px #00000029;
   letter-spacing: 2px;
-  font: normal normal 600 20px/27px Segoe UI;
-  color: #151617;
+  margin-bottom: 10px;
+
   .container {
     display: flex;
   }

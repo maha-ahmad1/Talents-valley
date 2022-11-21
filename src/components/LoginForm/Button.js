@@ -1,14 +1,11 @@
-import "./Button.css";
-// import { Link } from "react-router-dom";
+import { Buttonstyle } from "./Card/CardStyle";
 
-export default function Button({ text='', type ='submit' }) {
+export default function Button({ text = "", type = "submit", className='' }) {
   return (
     <>
-      {/* <Link  to={link}> */}
-      <button className="button" type={type} >
+      <Buttonstyle className={className} type={type}>
         {text}
-      </button>
-      {/* </Link> */}
+      </Buttonstyle>
     </>
   );
 }
