@@ -1,10 +1,13 @@
 import Navbar from "../../components/Nav/Navbar";
-import Button from "./Button";
 import Card from "./Card/Card";
 import { Title, Verificationh1, Buttonstyle, Divp } from "./Card/CardStyle";
 import VerificationStyle from "./VerificationStyle";
+import { useContext } from "react";
+import AuthContext from "../context/AuthProvider";
 
 export default function Verification() {
+  const authCtx = useContext(AuthContext);
+console.log(authCtx)
   return (
     <>
       <Navbar />

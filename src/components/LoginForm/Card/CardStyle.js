@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { IoIosArrowBack } from "react-icons/io";
 // import InputField from '../../LoginForm/Input';
 //import { createGlobalStyle } from 'styled-components'
@@ -15,16 +15,6 @@ import { IoIosArrowBack } from "react-icons/io";
 //   }
 // `
 export const Container = styled.div`
-  // display: block;
-  // background: #ffffff 0% 0% no-repeat padding-box;
-  // box-shadow: 0px 3px 6px #00000029;
-  // border-radius: 20px;
-  // padding: 32px 101px;
-  // text-align: left;
-  // width: 550px;
-  // height: 621px;
-  // margin: auto;
-
   display: block;
   padding: 32px 80px;
   margin-left: auto;
@@ -35,6 +25,7 @@ export const Container = styled.div`
   border-radius: 20px;
   width: 600px;
   text-align: left;
+  min-height: 650px;
 `;
 
 export const Flex = styled.div`
@@ -102,6 +93,7 @@ export const Resend = styled.input`
   box-shadow: 0px 2px 2px #00000029;
 `;
 
+
 export const SendInput = styled.div`
   display: flex;
   justify-content: space-between;
@@ -130,7 +122,7 @@ export const Eye = styled.span`
 `;
 
 export const Check = styled.img`
-  margin-top: 70px;
+  margin-top: 50px;
 `;
 
 export const Div = styled.div`
@@ -188,7 +180,7 @@ export const Verificationdiv = styled.div`
 export const Verifydiv = styled.div`
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 279px;
 `;
 export const Verifyh1 = styled.h1`
   font: normal normal normal 18px/24px Segoe UI;
@@ -242,4 +234,25 @@ export const Divp = styled.div`
   margin-bottom: 15px;
   font: normal normal normal 14px/19px Segoe UI;
   color: #151617;
+`;
+
+export const Divemail = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+`;
+export const Divs = styled.div`
+  display: flex;
+  text-align: center;
+  margin-top: 35px;
+  justify-content: center;
+`;
+
+export const Paragraphs = styled.h1`
+  font: normal normal 600 18px/27px Segoe UI;
+  color: #707070;
+  width: 250px;
+  line-height: 1.8;
 `;

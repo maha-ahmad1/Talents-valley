@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Logo from "./Logo";
 import Button from "./Button";
 import Text from "./Text";
 import Navbar from "./Navbar";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import axios from "axios";
+import AuthContext from "../context/AuthProvider";
 
 import "./Form.css";
 export default function Form() {
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [passwordType, setPasswordType] = useState("password");
   const [errMsg, setErrMsg] = useState("");
+  const { setAuth } = useContext(AuthContext);
+  // console.log(setAuth);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     try {
       const response = await axios.post(
         "https://talents-valley.herokuapp.com/api/user/login",
@@ -25,7 +30,17 @@ export default function Form() {
           password: password,
         }
       );
-      console.log(JSON.stringify(response?.data));
+
+      console.log(response?.data);
+      const accessToken = response?.data?.data.accessToken;
+      const role = response?.data?.data.user.role;
+      setAuth({ email, password, role, accessToken });
+      setEmail("");
+      setPassword("");
+      setIsLoading(false);
+
+      console.log(accessToken);
+      console.log(role);
     } catch (err) {
       console.log("erro", err);
 

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Ul = styled.ul`
   list-style: none;
@@ -47,7 +48,10 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>Home</li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+
       <li>Invoice</li>
       <li className="createstyle">Create</li>
     </Ul>

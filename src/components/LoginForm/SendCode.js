@@ -95,6 +95,7 @@ export default function SendCode() {
                   input1: e.target.value,
                 })
               }
+              type="number"
             />
 
             <Resend
@@ -146,13 +147,14 @@ export default function SendCode() {
             />
           </SendInput2>
         </SendInput>
-        <Button text="Continue"  />
+        <Button text="Continue" />
         <Text
           className="link"
           Sentence="Didn't get the code?"
           text="Resend"
           link="/SignUp"
         />
+
         <p style={{ color: "#EE404C", fontSize: "18px" }}>{errMsg}</p>
       </form>
     </Card>
