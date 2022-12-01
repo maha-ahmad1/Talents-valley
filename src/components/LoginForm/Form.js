@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import axios from "axios";
 import AuthContext from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 import "./Form.css";
 export default function Form() {
@@ -14,33 +15,29 @@ export default function Form() {
   const [email, setEmail] = useState("");
   const [passwordType, setPasswordType] = useState("password");
   const [errMsg, setErrMsg] = useState("");
-  const { setAuth } = useContext(AuthContext);
-  // console.log(setAuth);
+  const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
     try {
-      const response = await axios.post(
-        "https://talents-valley.herokuapp.com/api/user/login",
-        {
+      await axios
+        .post("https://talents-valley.herokuapp.com/api/user/login", {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
           email: email,
           password: password,
-        }
-      );
-
-      console.log(response?.data);
-      const accessToken = response?.data?.data.accessToken;
-      const role = response?.data?.data.user.role;
-      setAuth({ email, password, role, accessToken });
+        })
+        .then((response) => {
+          authCtx.login(response?.data?.data?.accessToken);
+          authCtx.user(response?.data?.data?.user);
+          console.log(response?.data);
+        });
       setEmail("");
       setPassword("");
       setIsLoading(false);
-
-      console.log(accessToken);
-      console.log(role);
+      navigate("/Verification");
     } catch (err) {
       console.log("erro", err);
 

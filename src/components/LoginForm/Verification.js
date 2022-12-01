@@ -7,7 +7,9 @@ import AuthContext from "../context/AuthProvider";
 
 export default function Verification() {
   const authCtx = useContext(AuthContext);
-console.log(authCtx)
+  console.log(authCtx.token);
+  console.log(authCtx.userData);
+
   return (
     <>
       <Navbar />
@@ -18,7 +20,7 @@ console.log(authCtx)
         </Verificationh1>
         <VerificationStyle
           texth1="Email Address"
-          textp="mail@email.com"
+          textp="mail@email.com "
           textspan="(not verified)"
           button="Verify"
         />

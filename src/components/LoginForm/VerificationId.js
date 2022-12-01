@@ -14,9 +14,8 @@ export default function VerificationId() {
           <img src={Idcard} alt="Email" />
         </Divemail>
         <Paragraph2>
-          Upload Document that Proof your Identity such as:
-          <br />
-          Identity Card,Passport, Driver License
+          Upload Document that Proof your Identity such as: Identity
+          Card,Passport, Driver License
         </Paragraph2>
         <Button text="Continue" />
       </Card>

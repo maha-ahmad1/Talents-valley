@@ -95,9 +95,9 @@ export default function SendCode() {
                   input1: e.target.value,
                 })
               }
-              type="number"
+              maxLength="1"
             />
-
+            {console.log(verificationCode.input1)}
             <Resend
               value={verificationCode.input2}
               onChange={(e) =>
@@ -106,6 +106,7 @@ export default function SendCode() {
                   input2: e.target.value,
                 })
               }
+              maxLength="1"
             />
             <Resend
               value={verificationCode.input3}
@@ -115,6 +116,7 @@ export default function SendCode() {
                   input3: e.target.value,
                 })
               }
+              maxLength="1"
             />
           </SendInput1>
           <SendInput2>
@@ -126,6 +128,7 @@ export default function SendCode() {
                   input4: e.target.value,
                 })
               }
+              maxLength="1"
             />
             <Resend
               value={verificationCode.input5}
@@ -135,6 +138,7 @@ export default function SendCode() {
                   input5: e.target.value,
                 })
               }
+              maxLength="1"
             />
             <Resend
               value={verificationCode.input6}
@@ -144,6 +148,7 @@ export default function SendCode() {
                   input6: e.target.value,
                 })
               }
+              maxLength="1"
             />
           </SendInput2>
         </SendInput>
