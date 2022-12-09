@@ -33,7 +33,7 @@ function SingUp() {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://talents-valley.herokuapp.com/api/user/signup",
+        "https://talents-valley-backend.herokuapp.com/api/user/signup",
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,

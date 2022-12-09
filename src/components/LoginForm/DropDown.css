@@ -1,0 +1,73 @@
+/* body {
+  background-color: #fac945;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+  margin-top: 150px;
+  font-size: 17px;
+  color: #4b4d54;
+  overflow: hidden;
+  font-family: "Source Sans Pro", sans-serif;
+} */
+
+.dropdown {
+    width: 100%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BEC2C6;
+    border-radius: 7px;
+    margin-top: 10px;
+  }
+  
+  .dropdown-header {
+    cursor: pointer;
+    color: #707070;
+    font: normal normal normal 16px/21px Segoe UI;
+    letter-spacing: 0.32px;
+    padding: 16px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+  }
+  
+  .dropdown-body {
+    padding: 5px;
+    border-top: 1px solid #e5e8ec;
+    display: none;
+    font: normal normal normal 16px/21px Segoe UI;
+  }
+  
+  .dropdown-body.open {
+    display: block;
+  }
+  
+  .dropdown-item {
+    padding: 10px 0;
+    color:#707070
+  }
+  
+  .dropdown-item:hover {
+    cursor: pointer;
+    background: #E2E2E2;
+  }
+  
+  .dropdown-item-dot {
+    opacity: 0;
+    color: #91a5be;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .dropdown-item-dot.selected {
+    opacity: 1;
+  }
+  
+  .icon {
+    font-size: 13px;
+    color: #91a5be;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .icon.open {
+    transform: rotate(90deg);
+  }
+  

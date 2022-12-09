@@ -1,19 +1,6 @@
 import styled from "styled-components/macro";
 import { IoIosArrowBack } from "react-icons/io";
-// import InputField from '../../LoginForm/Input';
-//import { createGlobalStyle } from 'styled-components'
 
-// export const GlobalStyle = createGlobalStyle`
-// * {
-//   box-sizing: border-box;
-//   margin: 0;
-//   padding: 0;
-// }
-// body {
-//   font-family: Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
-//   color: red;
-//   }
-// `
 export const Container = styled.div`
   display: block;
   padding: 32px 80px;
@@ -93,7 +80,6 @@ export const Resend = styled.input`
   box-shadow: 0px 2px 2px #00000029;
 `;
 
-
 export const SendInput = styled.div`
   display: flex;
   justify-content: space-between;
@@ -125,11 +111,22 @@ export const Check = styled.img`
   margin-top: 50px;
 `;
 
+export const StyledCheck = styled.img`
+  width: 60%;
+`;
+export const Styleddiv = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+`;
 export const Div = styled.div`
   display: flex;
   justify-content: center;
 `;
 
+export const StyleddropDown = styled.div`
+  margin-bottom: 30px;
+`;
 export const Heading = styled.h1`
   margin-top: 25px;
   margin-bottom: 30px;
@@ -230,6 +227,9 @@ export const Span = styled.span`
   color: #e80707;
 `;
 
+export const Styleverify = styled.span`
+  color: #19ab16;
+`;
 export const Divp = styled.div`
   margin-bottom: 15px;
   font: normal normal normal 14px/19px Segoe UI;
@@ -255,4 +255,29 @@ export const Paragraphs = styled.h1`
   color: #707070;
   width: 250px;
   line-height: 1.8;
+`;
+
+export const Styledbtn = styled.button`
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  border: 1px solid #bec2c6;
+  border-radius: 7px;
+  outline-color: rgb(146, 174, 250);
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  font: normal normal normal 16px/24px Segoe UI;
+  color: #000000;
+`;
+
+export const Styledinput = styled.input`
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: scale(3);
+  opacity: 0;
 `;

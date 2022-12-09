@@ -18,7 +18,7 @@ export default function Successverify() {
         <Divs>
           <Paragraphs> Your Email has been Verified Successfully</Paragraphs>
         </Divs>
-        <Link to="/">
+        <Link to="/Verification">
           <Button text=" Continue " />
         </Link>
        

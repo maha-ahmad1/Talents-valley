@@ -11,6 +11,7 @@ import Successverify from "./components/LoginForm/Successverify";
 import VerificationPhone from "./components/LoginForm/VerificationPhone";
 import SuccessPhone from "./components/LoginForm/SuccessPhone";
 import VerificationId from "./components/LoginForm/VerificationId";
+import Verificationaddress from "./components/LoginForm/Verificationaddress";
 
 import "./App.css";
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/VerificationPhone" element={<VerificationPhone />} />
         <Route path="/SuccessPhone" element={<SuccessPhone />} />
         <Route path="/VerificationId" element={<VerificationId />} />
+        <Route path="/address" element={<Verificationaddress />} />
       </Routes>
     </div>
   );

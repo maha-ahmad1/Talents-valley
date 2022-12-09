@@ -18,20 +18,17 @@ export default function Forgot() {
     try {
       console.log("mm");
       const response = await axios.post(
-        "https://talents-valley.herokuapp.com/api/user/password/forgot",
+        "https://talents-valley-backend.herokuapp.com/api/user/password/forgot",
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
           email: inputValue,
         }
       );
-
       navigate("/SendCode", { state: { id: response?.data.data._id } });
-
       console.log(JSON.stringify(response?.data));
     } catch (err) {
       console.log("error", err);
-
       if (!err?.response) {
         setErrMsg("No Server Response");
       } else if (err.response?.status >= 400 && err.response?.status < 500) {

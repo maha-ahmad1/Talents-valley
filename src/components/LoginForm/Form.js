@@ -7,7 +7,6 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import axios from "axios";
 import AuthContext from "../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
-
 import "./Form.css";
 export default function Form() {
   const [password, setPassword] = useState("");
@@ -23,9 +22,7 @@ export default function Form() {
     setIsLoading(true);
     try {
       await axios
-        .post("https://talents-valley.herokuapp.com/api/user/login", {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
+        .post("https://talents-valley-backend.herokuapp.com/api/user/login", {
           email: email,
           password: password,
         })
@@ -34,8 +31,6 @@ export default function Form() {
           authCtx.user(response?.data?.data?.user);
           console.log(response?.data);
         });
-      setEmail("");
-      setPassword("");
       setIsLoading(false);
       navigate("/Verification");
     } catch (err) {
@@ -62,7 +57,6 @@ export default function Form() {
   return (
     <nav className="form">
       <Logo />
-      {/* <Link to="/"> */}
 
       <form onSubmit={handleSubmit}>
         <h3>Login to Your Account</h3>
@@ -106,7 +100,6 @@ export default function Form() {
         />
       </form>
       <Navbar />
-      {/* </Link> */}
     </nav>
   );
 }

@@ -20,15 +20,10 @@ export default function SuccessPhone() {
             Your Phone Number has been Verified Successfully
           </Paragraphs>
         </Divs>
-        <Link to="/">
+        <Link to="/Verification">
           <Button text=" Continue " />
         </Link>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        
       </Card>
     </>
   );

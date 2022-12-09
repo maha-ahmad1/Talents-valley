@@ -14,8 +14,7 @@ export const AuthProvider = (props) => {
 
   const [token, setToken] = useState(storedToken);
   const [userData, setUserData] = useState(storedUser);
-  console.log(storedToken);
-  console.log(userData);
+
   const userIsLoggedIn = !!token;
   console.log(userIsLoggedIn);
 

@@ -25,7 +25,7 @@ export default function Forgot() {
     try {
       console.log("mm");
       const response = await axios.post(
-        "https://talents-valley.herokuapp.com/api/user/password/recover",
+        "https://talents-valley-backend.herokuapp.com/api/user/password/recover",
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -33,12 +33,10 @@ export default function Forgot() {
           recoverToken: recovertoken,
         }
       );
-      if (response?.status < 400 && password.match(passwordVerify)) {
+      if (response?.statusCode < 400 && password.match(passwordVerify)) {
         navigate("/Reset");
-        console.log("password" + password);
-        console.log("passwordVerify" + passwordVerify);
+        console.log(response?.data);
       }
-      console.log(response?.data);
     } catch (err) {
       console.log("erro", err);
       if (!err?.response) {
@@ -71,7 +69,6 @@ export default function Forgot() {
           value={password}
           name={"password"}
         />
-        {console.log(password)}
         <Label>Re-Enter Password</Label>
         <Password
           type={"password"}
@@ -79,7 +76,6 @@ export default function Forgot() {
           value={passwordVerify}
           name={"repassword"}
         />
-        {console.log(passwordVerify)}
         <p style={{ color: "#EE404C", fontSize: "18px" }}>{errVerify}</p>
 
         <Button text="Continue" />

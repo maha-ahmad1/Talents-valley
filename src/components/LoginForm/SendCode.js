@@ -1,7 +1,6 @@
 import Card from "./Card/Card";
 import Logo from "./Logo";
 import Button from "./Button";
-//import Check from "./Check";
 import { useState } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import {
@@ -47,7 +46,7 @@ export default function SendCode() {
     try {
       console.log("mm");
       const response = await axios.post(
-        "https://talents-valley.herokuapp.com/api/user/password/verify-code",
+        "https://talents-valley-backend.herokuapp.com/api/user/password/verify-code",
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,

@@ -14,15 +14,15 @@ import Idcard from "../../assets/images/Idcard.png";
 import DropDown from "./DropDown";
 import InputField from "./Input";
 import { BsUpload } from "react-icons/bs";
-
-export default function VerificationId() {
+import address from "../../assets/images/address.png";
+export default function Verificationaddress() {
   return (
     <>
       <Navbar />
       <Card>
         <Title>ID Verification</Title>
         <Divemail>
-          <img src={Idcard} alt="Email" />
+          <img src={address} alt="Email" />
         </Divemail>
         <Paragraph2>
           Upload Document that Proof your Identity such as: Identity
